@@ -7,7 +7,7 @@ module.exports = {
     "large-number": path.join(__dirname, "./src"),
     "large-number.min": path.join(__dirname, "./src")
   },
-  mode: "none",
+  mode: "none", // 因为要生产处dev版本的, 所以如果开启prod的话, 就会默认全部压缩
   output: {
     filename: "[name].js",
     library: "my-large-number", // 打包出的库的名字
@@ -17,7 +17,7 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin({
+      new TerserPlugin({ // 压缩指定代码, 并支持es6的编译
         include: /\.min\.js$/
       })
     ]
