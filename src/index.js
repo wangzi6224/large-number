@@ -2,7 +2,7 @@ export default function add (a, b) {
   let i = a.length - 1;
   let j = b.length - 1;
 
-  let carry = 0; 
+  let carry = 0;
   let ret = '';
   while (i >= 0 || j >= 0) {
     let x = 0;
@@ -32,3 +32,5 @@ export default function add (a, b) {
   }
   return ret;
 }
+
+export const a = 1
